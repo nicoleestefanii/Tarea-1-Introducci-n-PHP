@@ -5,23 +5,16 @@
 </head>
 
 <body>
-
-    <form method="post" action=" su nombre:
+    <form method="post" action="pagina2.php">
+        Ingrese su nombre:
         <input type="text" name="nombre" id="nombre">
-
         <br>
         <br>
-
         Ingrese su Edad:
         <input type="text" name="edad" id="edad">
-
-        <br>
-        <br>
-
+        <br><br>
         <input type="submit" value="confirmar">
-
     </form>
-
 </body>
 
 </html>

@@ -1,10 +1,36 @@
-<?php
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos Ingresados</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
 
-$nombre = $_POST["nombre"];
-$edad = $_POST["edad"];
-
-echo "Su nombre es: " . $nombre;
-echo "<br>";
-echo "Su edad es: " . $edad;
-
-?>
+        .resultado {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            padding: 20px 30px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="resultado">
+        <?php
+        $nombre = $_POST["nombre"];
+        $edad = $_POST["edad"];
+        echo "Su nombre es: " . $nombre;
+        echo "<br>";
+        echo "Su edad es: " . $edad;
+        ?>
+    </div>
+</body>
+</html>

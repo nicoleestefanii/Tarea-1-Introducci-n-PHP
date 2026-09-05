@@ -25,12 +25,33 @@
 <body>
     <div class="resultado">
         <?php
-        $nombre = $_POST["nombre"];
-        $edad = $_POST["edad"];
-        echo "Su nombre es: " . $nombre;
-        echo "<br>";
-        echo "Su edad es: " . $edad;
-        ?>
+        // Validación 1: que el nombre no venga vacío
+        $Nombre = trim($_REQUEST['nombre']);
+        if (empty($Nombre)) {
+            echo "Debe ingresar un nombre<br>";
+        } else {
+            echo "El nombre es: " . $Nombre . "<br>";
+        }
+        $Edad = $_POST["edad"];
+        // Validación 2: que la edad exista y sea un número (no letras ni vacío)
+        if (isset($Edad) && is_numeric($Edad)) {
+            $Edad = (int) $Edad;
+        // Validación 3: edad inválida si es negativa o mayor a 180
+        if ($Edad < 0 || $Edad > 180) {
+            $mensaje = "edad invalida";
+        } elseif ($Edad >= 18) {
+        // Acciones
+            $mensaje = "usted puede votar en las próximas elecciones 2028";
+        } else {
+            $mensaje = "usted no es mayor de edad";
+        }
+        // Todo el resultado en minúscula, como pidió la profe
+        echo strtolower($mensaje);
+        } else {
+            echo "debe ingresar una edad válida (solo números)";
+        }
+
+?>
     </div>
 </body>
 </html>
